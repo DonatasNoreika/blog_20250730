@@ -3,5 +3,13 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+# def pagrindinis(request):
+#     return HttpResponse("Sveiki atvykę į pagrindinį puslapį!")
+
 def pagrindinis(request):
-    return HttpResponse("Sveiki atvykę į pagrindinį puslapį!")
+    context = {
+        "pavadinimas": "Mano puslapis",
+        'antraste': "Sveiki atvykę!",
+    }
+    return render(request, template_name="pagrindinis.html", context=context)
+
